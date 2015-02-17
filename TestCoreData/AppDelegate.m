@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,47 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSError *error;
+//    
+//    NSCharacterSet *newlineCharSet = [NSCharacterSet newlineCharacterSet];
+//    NSString *sourcePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"able.txt"];
+//    
+//    NSString* fileContents = [NSString stringWithContentsOfFile:sourcePath
+//                                                       encoding:NSUTF8StringEncoding
+//                                                          error:nil];
+//    NSArray *lines = [fileContents componentsSeparatedByCharactersInSet:newlineCharSet];
+//    
+//    int i = 0;
+//    for (NSString *line in lines) {
+//        NSLog(@"%d:%@",i,line);
+//        NSArray *words = [line componentsSeparatedByString:@"\t"];
+//        for (NSString *word in words) {
+//            NSLog(@"%@",word);
+//        }
+//        NSManagedObject *wordInfo = [NSEntityDescription insertNewObjectForEntityForName:@"Dictionary" inManagedObjectContext:context];
+//        [wordInfo setValue:[words objectAtIndex:0] forKey:@"word"];
+//        [wordInfo setValue:[words objectAtIndex:1] forKey:@"word_description"];
+//        
+//        if (![context save:&error]) {
+//            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+//        }
+//        i++;
+//    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Dictionary" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSArray *words = [context executeFetchRequest:fetchRequest error:&error];
+    for (NSManagedObject *word in words) {
+        NSLog(@"word: %@", [word valueForKey:@"word"]);
+        NSLog(@"descrition: %@", [word valueForKey:@"word_description"]);
+    }
+    
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    ViewController *mainVC = (ViewController *)navigationController.topViewController;
+    [mainVC setManagedObjectContext:self.managedObjectContext];
+    [mainVC setWords:words];
     return YES;
 }
 

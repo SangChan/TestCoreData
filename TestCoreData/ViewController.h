@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UITableViewController
 
+@property (nonatomic,strong) NSArray *words;
+@property (strong, nonatomic) NSArray *navBarItems;
+@property (nonatomic,strong) NSManagedObjectContext* managedObjectContext;
 
 @end
 
