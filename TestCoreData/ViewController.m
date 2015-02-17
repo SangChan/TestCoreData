@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "WordDictionary.h"
 
 @interface ViewController ()
 
@@ -52,9 +53,9 @@
     }
     
     // Configure the cell...
-    NSManagedObject *word = [words objectAtIndex:indexPath.row];
-    cell.textLabel.text = [word valueForKey:@"word"];
-    cell.detailTextLabel.text = [word valueForKey:@"word_description"];
+    WordDictionary *word = [words objectAtIndex:indexPath.row];
+    cell.textLabel.text = [word word];
+    cell.detailTextLabel.text = [word word_description];
     return cell;
 }
 

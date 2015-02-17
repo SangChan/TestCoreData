@@ -16,6 +16,7 @@
 		637023AB1A91849F00496A2A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637023A91A91849F00496A2A /* LaunchScreen.xib */; };
 		637023B71A91849F00496A2A /* TestCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 637023B61A91849F00496A2A /* TestCoreDataTests.m */; };
 		637023C31A918AA000496A2A /* able.txt in Resources */ = {isa = PBXBuildFile; fileRef = 637023C21A918AA000496A2A /* able.txt */; };
+		637023DC1A92E69A00496A2A /* WordDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 637023DB1A92E69A00496A2A /* WordDictionary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,8 @@
 		637023B51A91849F00496A2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		637023B61A91849F00496A2A /* TestCoreDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCoreDataTests.m; sourceTree = "<group>"; };
 		637023C21A918AA000496A2A /* able.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = able.txt; sourceTree = "<group>"; };
+		637023DA1A92E69A00496A2A /* WordDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordDictionary.h; sourceTree = "<group>"; };
+		637023DB1A92E69A00496A2A /* WordDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordDictionary.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 		637023961A91849E00496A2A /* TestCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				637023DA1A92E69A00496A2A /* WordDictionary.h */,
+				637023DB1A92E69A00496A2A /* WordDictionary.m */,
 				6370239B1A91849E00496A2A /* AppDelegate.h */,
 				6370239C1A91849E00496A2A /* AppDelegate.m */,
 				637023A11A91849F00496A2A /* ViewController.h */,
@@ -229,6 +234,7 @@
 				6370239D1A91849E00496A2A /* AppDelegate.m in Sources */,
 				637023A01A91849E00496A2A /* TestCoreData.xcdatamodeld in Sources */,
 				637023A31A91849F00496A2A /* ViewController.m in Sources */,
+				637023DC1A92E69A00496A2A /* WordDictionary.m in Sources */,
 				6370239A1A91849E00496A2A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
